@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+	<AddUser>
+		<![CDATA[
+			INSERT INTO `bowling-and-lacrosse`.users(username, password, favorite_sport, favorite_bowler, favorite_lacrosse_player, favorite_lacrosse_team) Values (@username, @password, @favorite_sport, @favorite_bowler, @favorite_lacrosse_player, @favorite_lacrosse_team)
+		]]>
+	</AddUser>
+	
+	<GetUser>
+		<![CDATA[
+			SELECT * FROM `bowling-and-lacrosse`.users;
+		]]>
+	</GetUser>
+	
+	<UpdateUserByUsername>
+		<![CDATA[
+			UPDATE `bowling-and-lacrosse`.users
+			SET password = @password,
+				favorite_sport = @favorite_sport,
+				favorite_bowler = @favorite_bowler,
+				favorite_lacrosse_player = @favorite_lacrosse_player,
+				favorite_lacrosse_team = @favorite_lacrosse_team
+			WHERE username = @username
+		]]>
+	</UpdateUserByUsername>
+	
+	<GetBowlingPlayers>
+		<![CDATA[
+			SELECT * FROM `bowling-and-lacrosse`.`bowling-players`;
+		]]>
+	</GetBowlingPlayers>
+	
+	<GetBowlingSchedule>
+		<![CDATA[
+			SELECT * FROM `bowling-and-lacrosse`.`bowling-schedule`;
+		]]>
+	</GetBowlingSchedule>
+	
+	<GetLacrossePlayers>
+		<![CDATA[
+			SELECT * FROM `bowling-and-lacrosse`.`lacrosse-players`;
+		]]>
+	</GetLacrossePlayers>
+
+	<GetLacrosseSchedule>
+		<![CDATA[
+			SELECT * FROM `bowling-and-lacrosse`.`lacrosse-schedule`;
+		]]>
+	</GetLacrosseSchedule>
+
+	<GetLacrosseTeams>
+		<![CDATA[
+			SELECT * FROM `bowling-and-lacrosse`.`lacrosse-teams`;
+		]]>
+	</GetLacrosseTeams>
+	
+</Queries>
